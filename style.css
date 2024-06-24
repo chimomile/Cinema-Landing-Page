@@ -411,25 +411,28 @@ section#theaters {
 .hide{
     display: none;
 }
-footer{
-    background-color: rgb(200, 20, 80);
-    width: 100%;
-    height: 100px;
-    color: white;
+
+.copyright {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Josefin Sans', sans-serif;
-    
+    padding: 1.8rem;
+    font-size: 1.1rem;
+    color: #ffff;
+    background-color: rgb(200, 20, 80);
+    border-top: 0.5px solid;
+  }
 
-}
-.end {
-    position: absolute;
-    color: rgb(18, 9, 46);
-    bottom: 35px;
-    font-size: 14px;
-}
+  #author {
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+  }
 
+  #author:hover {
+    color: #333;
+    border-bottom: 2px solid #333;
+  }
 
 /* Styling for pop-up forms */
 .popup-form {

@@ -1,0 +1,125 @@
+{
+  "nowPlaying": [
+    {
+      "title": "Inside Out 2",
+      "poster": "./assets/poster/insideout2.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "Bad Boys: Ride or Die",
+      "poster": "./assets/poster/badboys.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer2",
+      "synopsis": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, optio quod porro id aperiam distinctio dolorum ipsa officiis ut eaque similique, iure laboriosam nisi modi mollitia! Iste magni aliquid at, consequuntur maxime ipsa, blanditiis nisi earum illo quae, odit obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, optio quod porro id aperiam distinctio dolorum ipsa officiis ut eaque similique, iure laboriosam nisi modi mollitia! Iste magni aliquid at, consequuntur maxime ipsa, blanditiis nisi earum illo quae, odit obcaecati!",
+      "duration": "2h 0m"
+    },
+    {
+      "title": "DILAN 1983 WO AI NI",
+      "poster": "./assets/poster/dilan.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "HOW TO MAKE MILLIONS BEFORE GRANDMA DIES",
+      "poster": "./assets/poster/grandma.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "THE GARFIELD MOVIE",
+      "poster": "./assets/poster/garfield.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "HAIKYU!! THE DUMPSTER BATTLE",
+      "poster": "./assets/poster/haikyu.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "PAKU TANAH JAWA",
+      "poster": "./assets/poster/pakutanahjawa.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "THE STRANGERS: CHAPTER 1",
+      "poster": "./assets/poster/strangers.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "DETECTIVE CONAN VS KID THE PHANTOM THIEF",
+      "poster": "./assets/poster/conan.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "THE PLOT",
+      "poster": "./assets/poster/theplot.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "IPAR ADALAH MAUT",
+      "poster": "./assets/poster/ipar.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "SENGKOLO: MALAM SATU SURO",
+      "poster": "./assets/poster/sengkolo.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    }
+  ],
+  "upcoming": [
+    {
+      "title": "The Exorcism",
+      "poster": "./assets/poster/exorcism.jpg",
+      "trailer": "https://www.youtube.com/watch?v=trailer3",
+      "synopsis": "Synopsis for The Exorcism",
+      "duration": "1h 45m"
+    },
+    {
+      "title": "Despicable Me 4",
+      "poster": "./assets/poster/despicableme4.jpg",
+      "trailer": "https://www.youtube.com/watch?v=trailer4",
+      "synopsis": "Synopsis for Despicable Me 4",
+      "duration": "1h 50m"
+    },
+    {
+      "title": "FROZEN 3",
+      "poster": "./assets/poster/frozen.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "DEADPOOL VS WOLVERINE",
+      "poster": "./assets/poster/deadpool.jpg",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    },
+    {
+      "title": "MY BOO",
+      "poster": "./assets/poster/myboo.png",
+      "trailer": "https://www.youtube.com/watch?v=trailer1",
+      "synopsis": "Synopsis for Inside Out 2",
+      "duration": "1h 35m"
+    }
+  ]
+}
