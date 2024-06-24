@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="details.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <h2 class="logo">Cinema</h2>
+        <ul>
+          <li>
+            <a href="index.html#goToNowPlaying"
+              ><i class="fa-solid fa-film"></i>Now Playing</a
+            >
+          </li>
+          <li>
+            <a href="index.html#upcoming"
+              ><i class="fa-regular fa-circle-play"></i>Upcoming</a
+            >
+          </li>
+          <li>
+            <a href="index.html#theaters"
+              ><i class="fa-solid fa-location-dot"></i>Theaters</a
+            >
+          </li>
+          <li class="dropdown">
+            <a href="#aboutus" id="aboutus-button"
+              ><i class="fa-solid fa-user"></i>About Us</a
+            >
+            <div class="dropdown-content">
+              <a href="#privacy-policy" id="privacy-policy-link"
+                >Privacy Policy</a
+              >
+              <a href="#contact-us">Contact Us</a>
+            </div>
+          </li>
+        </ul>
+        <button id="my-mtix-btn">My M-tix</button>
+      </nav>
+    </header>
+
+    <section id="movie-details">
+      <div class="movie-poster" id="movie-poster"></div>
+      <div class="movie-info">
+        <h2 id="movie-title"></h2>
+        <p id="movie-synopsis"></p>
+        <p id="movie-duration"></p>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <h3>Reviews</h3>
+      <form id="review-form">
+        <label for="reviewer-name">Name:</label>
+        <input type="text" id="reviewer-name" name="reviewername" required />
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" name="reviewtext" required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+      <div id="reviews-list"></div>
+    </section>
+
+    <!-- FOOTER AND COPYRIGHT -->
+    <div class="copyright">
+        <!-- <div class="footer-left">#404nf</div> -->
+        <div class="footer-cp">
+          Copyright &copy; 2024 by <span id="author">Lean & Techi</span>. All Rights
+          Reserved.
+        </div>
+        <!-- <div class="footer-summary"><span id="summaryid">~Summary</span></div> -->
+      </div>
+      <!-- FOOTER END -->
+
+    <script src="details.js"></script>
+  </body>
+</html>

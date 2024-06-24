@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
 </head>
 <body>
    <header class="header" id="home">
@@ -33,103 +32,32 @@
     </nav>
    </header> 
 
+   <div class="slider">
+    <div class="slide">
+        <img src="./assets/etc/slide1.png" alt="Image 1">
+    </div>
+    <div class="slide">
+        <img src="./assets/etc/slide2.png" alt="Image 2">
+    </div>
+    <div class="slide">
+        <img src="./assets/etc/slide3.png" alt="Image 3">
+    </div>
+</div>
+
+    <section id="nowplaying">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="textnowplay">
+            <h2 id="goToNowPlaying">NOW PLAYING IN CINEMA</h2>
+        </div>
+        <div class="movieplaying" id="now-playing-movies"></div>
+    </section>
     
-
-   <section id="nowplaying">
-    <div class="slider">
-        <div class="slide">
-            <img src="slide1.png" alt="Image 1">
+    <section id="upcoming">
+        <div class="textupcome">
+            <h2>COMING SOON IN CINEMA</h2>
         </div>
-        <div class="slide">
-            <img src="slide2.png" alt="Image 2">
-        </div>
-        <div class="slide">
-            <img src="slide3.png" alt="Image 3">
-        </div>
-    </div>
-    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    <div class="textnowplay">
-        <h2 id="goToNowPlaying">NOW PLAYING IN CINEMA</h2>
-    </div>
-    <div class="movieplaying">
-        <div class="movie">
-            <a href="#"><img src="insideout2.png" alt="Inside Out 2"></a>
-            <p>INSIDE OUT 2</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="badboys.png" alt="Badboys : Ride or Die"></a>
-            <p>BAD BOYS : RIDE OR DIE</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="dilan.png" alt="Dilan 1983 Wo Ai Ni"></a>
-            <p>DILAN 1983 WO AI NI</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="grandma.png" alt="How To Make Millions before Grandma Dies"></a>
-            <p>HOW TO MAKE MILLIONS BEFORE GRANDMA DIES</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="garfield.png" alt="The Garfield Movie"></a>
-            <p>THE GARFIELD MOVIE</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="haikyu.png" alt="Haikyu!! The Dumpster Battle"></a>
-            <p>HAIKYU!! THE DUMPSTER BATTLE</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="pakutanahjawa.png" alt="Paku Tanah Jawa"></a>
-            <p>PAKU TANAH JAWA</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="strangers.png" alt="The Strangers: Chapter 1"></a>
-            <p>THE STRANGERS: CHAPTER 1</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="conan.png" alt="Detective Conan vs Kid The Phantom Thief"></a>
-            <p>DETECTIVE CONAN VS KID THE PHANTOM THIEF</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="theplot.png" alt="The Plot"></a>
-            <p>THE PLOT</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="ipar.png" alt="Ipar adalah Maut"></a>
-            <p>IPAR ADALAH MAUT</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="sengkolo.png" alt="Sengkolo: Malam Satu Suro"></a>
-            <p>SENGKOLO: MALAM SATU SURO</p>
-        </div>
-    </div>
-   </section>
-
-   <section id="upcoming">
-    <div class="textupcome">
-        <h2>COMING SOON IN CINEMA</h2>
-    </div>
-    <div class="upcoming">
-        <div class="movie">
-            <a href="#"><img src="exorcism.jpg" alt="The Exorcism"></a>
-            <p>THE EXORCISM</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="despicableme4.jpg" alt="Despicable Me 4"></a>
-            <p>DESPICABLE ME 4</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="frozen.png" alt="Frozen 3"></a>
-            <p>FROZEN 3</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="deadpool.jpg" alt="Deadpool vs Wolverine"></a>
-            <p>DEADPOOL VS WOLVERINE</p>
-        </div>
-        <div class="movie">
-            <a href="#"><img src="myboo.png" alt="My Boo"></a>
-            <p>MY BOO</p>
-        </div>
-    </div>
+        <div class="upcoming" id="upcoming-movies"></div>
     </section>
 
     <section id="theaters">
@@ -161,16 +89,6 @@
         </div>
     </section>
 
-    <section id="contact-us">
-        <div class="contact-us">
-        <p>Cinema</p>
-        <p>Best Web For Movie Lovers In Indonesia! Movie Entertainment Platform From Cinema To Online Movie Streaming Selections. - For more information, Please support us with follow this link bellow:</p>
-        <div class="social">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
-    </div>
 
     <!--login-->
     <div id="login-popup" class="popup-form hide">
@@ -241,15 +159,18 @@
         </div>
     </div>
 
-    <footer id="footer">
-        <div class="footer">
-            <p>
-                2024 -
-                <i class="fa-regular fa-copyright"></i>
-                Copyright by lean teci
-            </p>
+    <!-- FOOTER AND COPYRIGHT -->
+    <div class="copyright">
+        <!-- <div class="footer-left">#404nf</div> -->
+        <div class="footer-cp">
+          Copyright &copy; 2024 by <span id="author">Lean & Techi</span>. All Rights
+          Reserved.
         </div>
-    </footer>
+        <!-- <div class="footer-summary"><span id="summaryid">~Summary</span></div> -->
+      </div>
+      <!-- FOOTER END -->
+
+    <script src="script.js"></script>
      
 
 </body>
