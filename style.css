@@ -1,0 +1,575 @@
+/* General styles */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: none;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Header and navigation */
+.header {
+    height: 12vh;
+    width: 100%;
+    background-color: rgb(200, 20, 80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.logo {
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-top: -10px;
+    padding: 10px 25px;
+    justify-content: right;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+    transition: wheat 0.4s;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+nav ul li a:hover{
+    color: bisque;
+    transition: color 0.4s;
+}
+
+/* Ensure dropdown link is styled correctly */
+nav ul li.dropdown > a {
+    background-color: rgb(200, 20, 80);
+    padding : 12px 25px;
+    margin: 0 -25px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    z-index: 1;
+ 
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(200, 20, 80);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Button styles */
+#my-mtix-btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    background-color: azure;
+    color: black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+#my-mtix-btn i {
+    margin-right: 8px;
+}
+
+#my-mtix-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Slides */
+.slider {
+    background-color: beige;
+    position: relative;
+    max-width: 100%;
+    margin-top: 12vh;
+    padding: 0; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    padding-top: 0vh;
+}
+
+/* Slide styles */
+.slide {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    height: 30vh;
+    width: 100%;
+}
+
+/* Navigation buttons for slides */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    z-index: 1;
+    transform: translateY(-50%);
+    background: none;
+    border: 5px;
+}
+
+.next {
+    right: 30px;
+}
+
+.prev {
+    left: 30px;
+}
+
+.prev:hover,
+.next:hover {
+    color: gray;
+}
+
+
+.textnowplay,
+.textupcome,
+.texttheater {
+    color: rgb(200, 20, 80);
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.movieplaying{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px;
+    row-gap: 20px; 
+    padding: 20px;
+    background-color: bisque;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+
+.upcoming, .movieplaying {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 6rem 10%;
+    gap: 30px;
+    background-color: rgb(255, 196, 224);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+
+.movieplaying a,
+.upcoming a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.movieplaying img,
+.upcoming img {
+    width: 280px;
+    height: 425px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movieplaying p,
+.upcoming p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #2f0c0c;
+}
+
+.movie:hover{
+    transform: scale(1.05);
+}
+/* Theater section */
+section#theaters {
+    height: 90vh;
+    width: 100%;
+    padding-bottom: 100vh;
+    background-color: bisque;
+    margin-top: -20px;
+}
+
+.theater {
+    background-color: bisque;
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    margin-left: 80px;
+    margin-bottom: 20px;
+    background-color: bisque;
+    margin-top: 10px;
+}
+
+#city-select {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.cinema-list {
+    margin-top: 20px;
+    background-color: bisque;
+}
+
+.cinema-table-wrapper {
+    height: 80vh; 
+    overflow-y: auto; 
+    background-color: bisque; 
+}
+
+.cinema-table {
+    width: 88%;
+    border-collapse: collapse;
+    border: 3px solid rgb(61, 2, 2);
+    color: black;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.cinema-table th,
+.cinema-table td {
+    border: 3px solid rgb(61, 2, 2);
+    padding: 8px;
+    text-align: left;
+}
+
+.cinema-table th {
+    background-color: rgb(130, 99, 33);
+    color: white;
+    text-align: left;
+}
+
+.contact-us {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: rgb(200, 20, 80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-us p:nth-child(1) {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.contact-us p:nth-child(2) {
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    width: 500px;
+    text-align: center;
+    line-height: 26px;
+}
+.social {
+    display: flex;
+}
+.social a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    margin: 22px 10px;
+    color: rgb(18, 9, 46);
+    text-decoration: none;
+    font-size: 20px;
+}
+.social a:hover {
+    transform: scale(1.3);
+    transition: .3s;
+}
+.popup-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    justify-content: space-between;
+}
+.close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+}
+.popup-content h2 {
+    margin-bottom: 20px;
+}
+
+.popup-content h4 {
+    margin-bottom: 20px;
+    justify-content: center;
+    text-align: justify;
+}
+
+.hide{
+    display: none;
+}
+footer{
+    background-color: rgb(200, 20, 80);
+    width: 100%;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    
+
+}
+.end {
+    position: absolute;
+    color: rgb(18, 9, 46);
+    bottom: 35px;
+    font-size: 14px;
+}
+
+
+/* Styling for pop-up forms */
+.popup-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(200, 20, 80);
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+    color: rgb(200, 20, 80);
+}
+
+.popup-content form label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: rgb(61, 2, 2);
+}
+
+.popup-content form input[type="text"],
+.popup-content form input[type="email"],
+.popup-content form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.popup-content form button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(200, 20, 80);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup-content form button:hover {
+    background-color: rgb(170, 0, 70);
+}
+
+.popup-content p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.popup-content p a {
+    color: rgb(200, 20, 80);
+    text-decoration: none;
+}
+
+.popup-content p a:hover {
+    text-decoration: underline;
+}
+
+.hide{
+    display: none;
+}
+
+#success-popup h2 {
+    color: green;
+}
+
+#success-popup p {
+    color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        height: 10vh;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .dropdown {
+        margin-left: 0px;
+        
+    }
+
+    nav ul li.dropdown > a {
+        background: rgb(170, 0, 70);
+        padding-left: 20px;
+        padding-top: 0px;
+        padding-right: 40px;
+    }
+
+    /* Slider dan Tombol Navigasi */
+    .slider {
+        margin-top: 8vh;
+    }
+
+    .prev, .next {
+        top: 30%;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .movieplaying,
+    .upcoming{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+}
