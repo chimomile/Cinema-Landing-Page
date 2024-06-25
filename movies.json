@@ -3,16 +3,38 @@
     {
       "title": "Inside Out 2",
       "poster": "./assets/poster/insideout2.png",
-      "trailer": "https://www.youtube.com/watch?v=trailer1",
-      "synopsis": "Synopsis for Inside Out 2",
-      "duration": "1h 35m"
-    },
-    {
-      "title": "Bad Boys: Ride or Die",
-      "poster": "./assets/poster/badboys.png",
-      "trailer": "https://www.youtube.com/watch?v=trailer2",
-      "synopsis": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, optio quod porro id aperiam distinctio dolorum ipsa officiis ut eaque similique, iure laboriosam nisi modi mollitia! Iste magni aliquid at, consequuntur maxime ipsa, blanditiis nisi earum illo quae, odit obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, optio quod porro id aperiam distinctio dolorum ipsa officiis ut eaque similique, iure laboriosam nisi modi mollitia! Iste magni aliquid at, consequuntur maxime ipsa, blanditiis nisi earum illo quae, odit obcaecati!",
-      "duration": "2h 0m"
+      "trailer": "https://www.youtube.com/embed/LEjhY15eCx0",
+      "synopsis": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi accusamus tempora et eveniet architecto quidem maxime ab, cupiditate deserunt possimus pariatur, mollitia assumenda at magni laudantium nemo voluptatum dicta voluptates fugit, voluptatibus hic! Perferendis quod dignissimos minus laudantium odio suscipit.",
+      "duration": "150 min",
+      "rate": 5,
+      "age": "13+",
+      "schedule": [
+        {
+          "date": "2024-06-25",
+          "times": ["14:00", "17:00", "20:00"]
+        },
+        {
+          "date": "2024-06-26",
+          "times": ["12:00", "15:00", "18:00"]
+        }
+      ],
+      "reviews": [
+        {
+          "name": "Kanda Yow",
+          "rating": 5,
+          "comment": "Filmnya keren abies yoww, jadi gasabar untuk series selanjutnya!"
+        },
+        {
+          "name": "Pocy",
+          "rating": 4,
+          "comment": "Very good, will come again."
+        },
+        {
+          "name": "Leann",
+          "rating": 2,
+          "comment": "Just OK and need room for improvement."
+        }
+      ]
     },
     {
       "title": "DILAN 1983 WO AI NI",
@@ -89,9 +111,12 @@
     {
       "title": "The Exorcism",
       "poster": "./assets/poster/exorcism.jpg",
-      "trailer": "https://www.youtube.com/watch?v=trailer3",
+      "trailer": "https://www.youtube.com/embed/trailer4",
       "synopsis": "Synopsis for The Exorcism",
-      "duration": "1h 45m"
+      "duration": "105 min",
+      "rating": 4,
+      "age": "18+",
+      "schedule": []
     },
     {
       "title": "Despicable Me 4",
