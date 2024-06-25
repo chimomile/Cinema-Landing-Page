@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="details.css" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="../details.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +23,7 @@
   <body>
     <header class="header">
       <nav>
-        <h2 class="logo">Cinema</h2>
+        <h2 class="logo">Techinema.</h2>
         <ul>
           <li>
             <a href="index.html#goToNowPlaying"
@@ -52,42 +52,182 @@
             </div>
           </li>
         </ul>
-        <button id="my-mtix-btn">My M-tix</button>
+        <button id="my-mtix-btn">Login</button>
       </nav>
     </header>
 
     <section id="movie-details">
-      <div class="movie-poster" id="movie-poster"></div>
-      <div class="movie-info">
-        <h2 id="movie-title"></h2>
-        <p id="movie-synopsis"></p>
-        <p id="movie-duration"></p>
+      <div class="main-wrap">
+        <div class="top">
+          <iframe
+            id="movie-trailer"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="bot">
+          <div class="left">
+            <div class="kiri-1">
+              <p id="title"></p>
+              <div class="lefter">
+                <p id="duration"></p>
+                <p id="rate"></p>
+                <p id="age"></p>
+              </div>
+            </div>
+            <div class="kiri-2">
+              <a href="#" class="hero-cta" id="schedule-btn">Check Schedule</a>
+              <a href="#about" class="hero-cta">Book Tickets</a>
+            </div>
+          </div>
+          <div class="right">
+            <div class="righter">
+              <p>Synopsis</p>
+              <p id="synopsis"></p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="reviews">
-      <h3>Reviews</h3>
-      <form id="review-form">
-        <label for="reviewer-name">Name:</label>
-        <input type="text" id="reviewer-name" name="reviewername" required />
-        <label for="review-text">Review:</label>
-        <textarea id="review-text" name="reviewtext" required></textarea>
-        <button type="submit">Submit Review</button>
-      </form>
-      <div id="reviews-list"></div>
+      <div class="container">
+        <h2>People Reviews</h2>
+        <div id="reviewList" class="review-list"></div>
+        <form id="reviewForm" class="review-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Very Good</option>
+              <option value="3">3 - Good</option>
+              <option value="2">2 - Fair</option>
+              <option value="1">1 - Poor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+          </div>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
     </section>
 
-    <!-- FOOTER AND COPYRIGHT -->
     <div class="copyright">
-        <!-- <div class="footer-left">#404nf</div> -->
-        <div class="footer-cp">
-          Copyright &copy; 2024 by <span id="author">Lean & Techi</span>. All Rights
-          Reserved.
-        </div>
-        <!-- <div class="footer-summary"><span id="summaryid">~Summary</span></div> -->
+      <div class="footer-cp">
+        Copyright &copy; 2024 by <span id="author">Lean & Techi</span>. All
+        Rights Reserved.
       </div>
-      <!-- FOOTER END -->
+    </div>
 
-    <script src="details.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieTitle = urlParams.get("title");
+
+        fetch("/movies")
+          .then((response) => response.json())
+          .then((data) => {
+            const allMovies = data.nowPlaying.concat(data.upcoming);
+            const movie = allMovies.find((m) => m.title === movieTitle);
+            if (movie) {
+              displayMovieDetails(movie);
+              displayReviews(movie.reviews);
+            }
+          })
+          .catch((error) =>
+            console.error("Error fetching movie details:", error)
+          );
+
+        const reviewForm = document.getElementById("reviewForm");
+        const reviewList = document.getElementById("reviewList");
+
+        // Function to render reviews
+        function renderReviews(reviews) {
+          reviewList.innerHTML = "";
+          reviews.forEach((review) => {
+            const reviewItem = document.createElement("div");
+            reviewItem.classList.add("review-item");
+            reviewItem.innerHTML = `
+              <h3>${review.name}</h3>
+              <div class="rating">${"★".repeat(review.rating)}${"☆".repeat(
+              5 - review.rating
+            )}</div>
+              <p>${review.comment}</p>
+            `;
+            reviewList.appendChild(reviewItem);
+          });
+        }
+
+        // Handle form submission
+        reviewForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = e.target.name.value;
+          const rating = parseInt(e.target.rating.value);
+          const comment = e.target.comment.value;
+          const newReview = { name, rating, comment };
+
+          // Add the new review to the movie's reviews
+          fetch("/movies")
+            .then((response) => response.json())
+            .then((data) => {
+              const allMovies = data.nowPlaying.concat(data.upcoming);
+              const movie = allMovies.find((m) => m.title === movieTitle);
+              movie.reviews.push(newReview);
+
+              // Update the reviews in the JSON file
+              fetch("/updateReviews", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  title: movieTitle,
+                  reviews: movie.reviews,
+                }),
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  if (data.success) {
+                    renderReviews(movie.reviews);
+                    reviewForm.reset();
+                  } else {
+                    console.error("Error updating reviews:", data.message);
+                  }
+                });
+            });
+        });
+
+        // Function to display movie details
+        function displayMovieDetails(movie) {
+          document.getElementById("movie-trailer").src = movie.trailer;
+          document.getElementById("title").textContent = movie.title;
+          document.getElementById(
+            "duration"
+          ).textContent = `${movie.duration} minutes`;
+          document.getElementById("rate").textContent = `${movie.rate}★`;
+          document.getElementById("age").textContent = movie.age;
+          document.getElementById("synopsis").textContent = movie.synopsis;
+          document.getElementById(
+            "schedule-btn"
+          ).href = `moviesschedule.html?title=${encodeURIComponent(
+            movie.title
+          )}`;
+        }
+
+        // Function to display reviews
+        function displayReviews(reviews) {
+          renderReviews(reviews);
+        }
+      });
+    </script>
   </body>
 </html>
